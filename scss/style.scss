@@ -3,8 +3,12 @@
 // ===============================================
 
 // DO NOT CHANGE THE ORDER OF IMPORTED FILES
-@import "base/variables";
-
-
 // BASE PARTIALS
+@import "base/variables";
+@import "base/queries";
 @import "base/reset";
+@import "base/container";
+
+
+// COMPONENTS PARTIALS
+@import "components/header";
