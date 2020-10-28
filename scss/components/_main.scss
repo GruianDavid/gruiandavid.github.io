@@ -1,0 +1,15 @@
+.main{
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    &-image{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &-grid{
+        // display: grid;
+        // grid-template-columns: 40px ;
+    }
+}
