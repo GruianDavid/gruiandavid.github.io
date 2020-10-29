@@ -30,7 +30,8 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  scroll-behavior: smooth; }
 
 .nano > .nano-content:focus {
   outline: thin dotted; }
@@ -98,7 +99,11 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out; }
+  .nav.filled {
+    background-color: #0f0f0f; }
   .nav-grid {
     display: flex;
     align-items: center;
@@ -134,10 +139,10 @@ body {
       transition: all 0.3s ease-in-out; }
       .nav-elements a.active {
         pointer-events: none; }
-      .nav-elements a:hover, .nav-elements a.active {
+      .nav-elements a:hover {
         color: #ffae00; }
-        .nav-elements a:hover::after, .nav-elements a.active::after {
-          width: 90%; }
+      .nav-elements a.active::after {
+        width: 90%; }
       .nav-elements a::after {
         content: "";
         position: absolute;
@@ -148,7 +153,8 @@ body {
         left: 50%;
         transform: translateX(-50%);
         background-color: #ffae00;
-        transition: all 0.15s ease-in; }
+        transition: all 0.15s ease-in;
+        transition-delay: 0.4s; }
   .nav-element {
     padding: 0 25px; }
 
