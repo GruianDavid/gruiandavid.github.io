@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 body {
   background-color: #333333;
@@ -16,27 +18,30 @@ body {
 
 .nav {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; }
+  z-index: 1000;
+  font-family: "Raleway", sans-serif; }
   .nav-grid {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 0; }
+    @media screen and (min-width: 120em) {
+      .nav-grid {
+        padding: 30px 0; } }
   .nav-logo a {
-    padding: 0 25px;
     text-transform: uppercase;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 4px;
     color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease-in-out; }
     .nav-logo a:hover {
-      color: #999999; }
+      color: #ffae00; }
   .nav-elements {
     display: flex;
     justify-content: flex-end;
@@ -44,16 +49,33 @@ body {
     list-style-type: none;
     margin-right: -25px; }
     .nav-elements a {
-      padding: 0 25px;
+      position: relative;
       text-transform: uppercase;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 3px;
       color: #ffffff;
       text-decoration: none;
       transition: all 0.3s ease-in-out; }
-      .nav-elements a:hover {
-        color: #999999; }
+      .nav-elements a.active {
+        pointer-events: none; }
+      .nav-elements a:hover, .nav-elements a.active {
+        color: #ffae00; }
+        .nav-elements a:hover::after, .nav-elements a.active::after {
+          width: 90%; }
+      .nav-elements a::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -10px;
+        width: 0;
+        height: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffae00;
+        transition: all 0.15s ease-in; }
+  .nav-element {
+    padding: 0 25px; }
 
 .main {
   overflow: hidden;
@@ -63,6 +85,11 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: cover; }
+    object-fit: cover;
+    z-index: -1;
+    object-position: center; }
+
+.section {
+  height: 100vh; }
 
 /*# sourceMappingURL=style.css.map */

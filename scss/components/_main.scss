@@ -2,11 +2,27 @@
     overflow: hidden;
     position: relative;
     height: 100vh;
+    @if $overlayDisplay {
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background-color: rgba($color: $overlayMainColor, $alpha: $overlayMainOpacity);
+            // background: lightblue;
+            // mix-blend-mode: hue;
+        }
+    }
     &-image{
         position: absolute;
         height: 100%;
         width: 100%;
         object-fit: cover;
+        z-index: -1;
+        object-position: center;
     }
     &-grid{
         // display: grid;
