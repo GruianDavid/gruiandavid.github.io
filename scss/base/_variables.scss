@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
-
+@font-face {
+    font-family: 'Gotham';
+    src: url(/fonts/GothamPro-Medium.woff) format('woff');
+}
 $fontTitle: 'Raleway', sans-serif;
 $fontBody: 'Montserrat', sans-serif;
 
@@ -8,5 +11,5 @@ $overlayDisplay: false;
 $overlayMainColor: #000;
 $overlayMainOpacity: 0.2;
 
-$colorNavActive: #ffae00;
+$colorNavActive: #ff9100;
 

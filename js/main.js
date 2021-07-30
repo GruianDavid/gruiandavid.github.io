@@ -15,6 +15,11 @@ jQuery(document).ready(function($){
 
     $(".nano-content").on('scroll', function() {
         let distanceFromTop = $(".nano-content").scrollTop(); 
+        //hero image paralax
+        $('.main-image').css({
+            transform: "translateY(" + distanceFromTop/2 + "px)"
+        })
+        //set fill color on scroll
         if (distanceFromTop > 50){
             $('.nav').addClass('filled');
         }else{

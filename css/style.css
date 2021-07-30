@@ -1,27 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
+@font-face {
+  font-family: 'Gotham';
+  src: url(/fonts/GothamPro-Medium.woff) format("woff");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Montserrat", sans-serif;
+}
 
 body {
   background-color: #333333;
-  position: relative; }
+  position: relative;
+}
 
 .container {
   margin: 0 auto;
   width: 100%;
   max-width: 87.5rem;
-  padding: 0 20px; }
+  padding: 0 20px;
+  height: 100%;
+}
+
+@media screen and (max-width: 119.9375em) {
+  .container {
+    max-width: 90%;
+  }
+}
 
 /** initial setup **/
 .nano {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .nano > .nano-content {
   position: absolute;
@@ -31,16 +47,20 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 .nano > .nano-content:focus {
-  outline: thin dotted; }
+  outline: thin dotted;
+}
 
 .nano > .nano-content::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 .has-scrollbar > .nano-content::-webkit-scrollbar {
-  display: block; }
+  display: block;
+}
 
 .nano > .nano-pane {
   background: rgba(0, 0, 0, 0.25);
@@ -52,45 +72,47 @@ body {
   visibility: hidden\9;
   /* Target only IE7 and IE8 with this hack */
   opacity: .01;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
-  -o-transition: .2s;
   transition: .2s;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px; }
-  .nano > .nano-pane:hover {
-    width: 12px; }
+  border-radius: 50px;
+}
+
+.nano > .nano-pane:hover {
+  width: 12px;
+}
 
 .nano > .nano-pane > .nano-slider {
   background: #444;
   background: rgba(0, 0, 0, 0.5);
   position: relative;
   margin: 0 1px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px; }
+  border-radius: 50px;
+}
 
 .nano:hover > .nano-pane,
 .nano-pane.active,
 .nano-pane.flashed {
   visibility: visible\9;
   /* Target only IE7 and IE8 with this hack */
-  opacity: 0.99; }
+  opacity: 0.99;
+}
 
 .nano {
   background: transparent;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .nano .nano-content {
-  padding-right: 0px; }
+  padding-right: 0px;
+}
 
 .nano .nano-pane {
-  background: transparent; }
+  background: transparent;
+}
 
 .nano .nano-slider {
-  background: #111; }
+  background: #111;
+}
 
 .nav {
   overflow: hidden;
@@ -101,76 +123,213 @@ body {
   z-index: 1000;
   font-family: "Raleway", sans-serif;
   background-color: transparent;
-  transition: all 0.3s ease-in-out; }
-  .nav.filled {
-    background-color: #0f0f0f; }
-  .nav-grid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 0; }
-    @media screen and (min-width: 120em) {
-      .nav-grid {
-        padding: 30px 0; } }
-  .nav-logo a {
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out; }
-    .nav-logo a:hover {
-      color: #ffae00; }
-  .nav-elements {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style-type: none;
-    margin-right: -25px; }
-    .nav-elements a {
-      position: relative;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 3px;
-      color: #ffffff;
-      text-decoration: none;
-      transition: all 0.3s ease-in-out; }
-      .nav-elements a.active {
-        pointer-events: none; }
-      .nav-elements a:hover {
-        color: #ffae00; }
-      .nav-elements a.active::after {
-        width: 90%; }
-      .nav-elements a::after {
-        content: "";
-        position: absolute;
-        display: block;
-        bottom: -10px;
-        width: 0;
-        height: 2px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #ffae00;
-        transition: all 0.15s ease-in;
-        transition-delay: 0.4s; }
-  .nav-element {
-    padding: 0 25px; }
+  transition: all 0.3s ease-in-out;
+}
+
+.nav.filled {
+  background-color: #0f0f0f;
+}
+
+.nav-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo a {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-logo a:hover {
+  color: #ff9100;
+}
+
+.nav-elements {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  margin-right: -25px;
+}
+
+.nav-elements a {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  padding: 20px 15px;
+}
+
+@media screen and (min-width: 120em) {
+  .nav-elements a {
+    padding: 30px 15px;
+  }
+}
+
+.nav-elements a.active {
+  pointer-events: none;
+}
+
+.nav-elements a:hover {
+  color: #ff9100;
+}
+
+.nav-elements a.active::after {
+  width: 90%;
+}
+
+.nav-elements a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff9100;
+  transition: all 0.15s ease-in;
+  transition-delay: 0.4s;
+}
+
+.nav-element {
+  padding: 0 10px;
+}
 
 .main {
   overflow: hidden;
   position: relative;
-  height: 100vh; }
-  .main-image {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: -1;
-    object-position: center; }
+}
+
+.main-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  object-position: center;
+}
+
+.main-content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 3.125rem;
+}
+
+.main-content-text {
+  color: #fff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.main-content-text h1 {
+  font-size: 3.75rem;
+}
+
+.main-content-text .name {
+  color: #ff9100;
+  font-size: 150px;
+  font-weight: 900;
+  margin-bottom: -130px;
+  font-family: "Raleway", sans-serif;
+}
+
+.main-content-text .surname {
+  font-size: 150px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1px white;
+  font-family: "Raleway", sans-serif;
+}
+
+.main-content-text .skills {
+  text-transform: uppercase;
+  letter-spacing: 1.56px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.main-scroll .arrow-container {
+  display: block;
+  width: 36px;
+  height: 32px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+}
+
+.main-scroll .arrow-container:hover {
+  cursor: pointer;
+}
+
+.main-scroll .arrow-container:hover .arrow {
+  top: 50%;
+}
+
+.main-scroll .arrow-container:hover .arrow:before {
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+.main-scroll .arrow-container:hover .arrow:after {
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+.main-scroll .arrow {
+  position: absolute;
+  left: 50%;
+  transition: all .4s ease;
+}
+
+.main-scroll .arrow:before, .main-scroll .arrow:after {
+  transition: all .4s ease;
+  content: '';
+  display: block;
+  position: absolute;
+  transform-origin: bottom right;
+  background: #fff;
+  width: 2px;
+  height: 10px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+.main-scroll .arrow:after {
+  transform-origin: bottom left;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+.main-scroll .arrow:nth-child(1) {
+  opacity: 0.3;
+  top: 35%;
+}
+
+.main-scroll .arrow:nth-child(2) {
+  opacity: 0.6;
+  top: 55%;
+}
+
+.main-scroll .arrow:nth-child(3) {
+  opacity: 0.9;
+  top: 75%;
+}
 
 .section {
-  height: 100vh; }
-
+  height: 100vh;
+}
 /*# sourceMappingURL=style.css.map */
